@@ -19,14 +19,18 @@ class _MainScreenState extends State<MainScreen> {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: InkWell(
-              onTap: (){},
-              child: Icon(Icons.add)),
+                onTap: () {
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return Container();
+                      });
+                },
+                child: Icon(Icons.add)),
           )
         ],
       ),
-      body: InkWell(
-        onTap: (){},
-        child: Text('some text')),
+      body: InkWell(onTap: () {}, child: Text('some text')),
     );
   }
 }
