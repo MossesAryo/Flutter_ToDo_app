@@ -18,7 +18,12 @@ class _MainScreenState extends State<MainScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Icon(Icons.add),
+            child: GestureDetector(
+              onTap: (){
+                
+              },
+              child: Icon(Icons.add)
+              ),
           )
         ],
       ),
