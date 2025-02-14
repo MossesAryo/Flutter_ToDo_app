@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/addTodo.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -30,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
           )
         ],
       ),
-      body: InkWell(onTap: () {}, child: Text('some text')),
+      body: AddTodo(),
     );
   }
 }
