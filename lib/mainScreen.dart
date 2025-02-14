@@ -12,26 +12,29 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Todo App'),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: InkWell(
-                onTap: () {
-                  showModalBottomSheet(
-                      context: context,
-                      builder: (context) {
-                        return Container();
-                      });
-                },
-                child: Icon(Icons.add)),
-          )
-        ],
-      ),
-      body: AddTodo(),
-    );
+        drawer: Drawer(),
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text('Todo App'),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: InkWell(
+                  onTap: () {
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return Container(
+                            padding: EdgeInsets.all(20),
+                            height: 200,
+                            child: AddTodo(),
+                          );
+                        });
+                  },
+                  child: Icon(Icons.add)),
+            )
+          ],
+        ),
+        body: Container());
   }
 }
