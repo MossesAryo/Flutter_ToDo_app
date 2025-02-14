@@ -11,9 +11,16 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(),
       appBar: AppBar(
         centerTitle: true,
         title: const Text('Todo App'),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Icon(Icons.add),
+          )
+        ],
       ),
     );
   }
