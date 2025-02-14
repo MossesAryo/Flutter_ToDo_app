@@ -11,6 +11,8 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   String text = "Simple Text";
 
+  List<String> todoList = ["Drink Water", "Make Dinner", "Sleep"];
+
   void changeText({required String todoText}) {
     setState(() {
       text = "$todoText";
@@ -48,6 +50,12 @@ class _MainScreenState extends State<MainScreen> {
             )
           ],
         ),
-        body: Container(child: Text('$text')));
+        body: ListView.builder(
+            itemCount: todoList.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ListTile(
+                title: Text(todoList[index]),
+              );
+            }));
   }
 }
