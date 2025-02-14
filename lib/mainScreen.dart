@@ -18,15 +18,15 @@ class _MainScreenState extends State<MainScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: GestureDetector(
-              onTap: (){
-                
-              },
-              child: Icon(Icons.add)
-              ),
+            child: InkWell(
+              onTap: (){},
+              child: Icon(Icons.add)),
           )
         ],
       ),
+      body: InkWell(
+        onTap: (){},
+        child: Text('some text')),
     );
   }
 }
