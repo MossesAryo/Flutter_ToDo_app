@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todoapp/addTodo.dart';
+import 'package:todoapp/widget/listbuilder.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -85,30 +86,7 @@ class _MainScreenState extends State<MainScreen> {
             )
           ],
         ),
-        body: ListView.builder(
-            itemCount: todoList.length,
-            itemBuilder: (BuildContext context, int index) {
-              return ListTile(
-                onTap: () {
-                  showModalBottomSheet(
-                      context: context,
-                      builder: (context) {
-                        return Container(
-                          padding: EdgeInsets.all(20),
-                          child: ElevatedButton(
-                              onPressed: () {
-                                setState(() {
-                                  todoList.removeAt(index);
-                                });
-                                updateLocalData();
-                                Navigator.pop(context);
-                              },
-                              child: Text('Mark As done')),
-                        );
-                      });
-                },
-                title: Text(todoList[index]),
-              );
-            }));
+        body:
+            Listbuilder(todoList: todoList, updateLocalData: updateLocalData));
   }
 }
