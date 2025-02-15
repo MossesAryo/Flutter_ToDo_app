@@ -75,7 +75,25 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: Drawer(),
+        drawer: Drawer(
+          child: Column(children: [
+            Container(
+              height: 200,
+              width: double.infinity,
+              color: Colors.blueGrey[900],
+              child: Center(
+                  child: Text(
+                "Todo App",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              )),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('About Me'),
+            )
+          ]),
+        ),
         appBar: AppBar(
           centerTitle: true,
           title: const Text('Todo App'),
