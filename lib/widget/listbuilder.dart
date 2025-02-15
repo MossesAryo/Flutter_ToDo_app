@@ -14,6 +14,27 @@ class Listbuilder extends StatefulWidget {
 }
 
 class _ListbuilderState extends State<Listbuilder> {
+  void onItemClicked({
+    required int index,
+  }) {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            padding: EdgeInsets.all(20),
+            child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    widget.todoList.removeAt(index);
+                  });
+                  widget.updateLocalData();
+                  Navigator.pop(context);
+                },
+                child: Text('Mark As done')),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -21,22 +42,7 @@ class _ListbuilderState extends State<Listbuilder> {
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             onTap: () {
-              showModalBottomSheet(
-                  context: context,
-                  builder: (context) {
-                    return Container(
-                      padding: EdgeInsets.all(20),
-                      child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              widget.todoList.removeAt(index);
-                            });
-                            widget.updateLocalData();
-                            Navigator.pop(context);
-                          },
-                          child: Text('Mark As done')),
-                    );
-                  });
+              onItemClicked(index: index);
             },
             title: Text(widget.todoList[index]),
           );
