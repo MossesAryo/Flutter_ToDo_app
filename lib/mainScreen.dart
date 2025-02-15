@@ -13,6 +13,26 @@ class _MainScreenState extends State<MainScreen> {
   List<String> todoList = [];
 
   void addTodo({required String todoText}) {
+    if (todoList.contains(todoText)) {
+      showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+                title: Text('To Do already exists'),
+                content: Text('Please enter a new To Do'),
+                actions: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text('close'),
+                  )
+                ]);
+          });
+
+      return;
+    }
+
     setState(() {
       todoList.insert(0, todoText);
     });
@@ -28,9 +48,9 @@ class _MainScreenState extends State<MainScreen> {
 
   void loadData() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    
+
     setState(() {
-    todoList = (prefs.getStringList('todoList') ?? []).toList();
+      todoList = (prefs.getStringList('todoList') ?? []).toList();
     });
   }
 
