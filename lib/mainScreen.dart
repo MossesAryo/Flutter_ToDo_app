@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todoapp/addTodo.dart';
 
 class MainScreen extends StatefulWidget {
@@ -9,13 +10,28 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List<String> todoList = ["Drink Water", "Make Dinner", "Sleep"];
+  List<String> todoList = [];
 
   void addTodo({required String todoText}) {
     setState(() {
       todoList.insert(0, todoText);
     });
+    updateLocalData();
     Navigator.pop(context);
+  }
+
+  void updateLocalData() async {
+    // Obtain shared preferences.
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setStringList('todoList', todoList);
+  }
+
+  void loadData() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    
+    setState(() {
+    todoList = (prefs.getStringList('todoList') ?? []).toList();
+    });
   }
 
   @override
@@ -64,6 +80,7 @@ class _MainScreenState extends State<MainScreen> {
                                 setState(() {
                                   todoList.removeAt(index);
                                 });
+                                updateLocalData();
                                 Navigator.pop(context);
                               },
                               child: Text('Mark As done')),
