@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todoapp/addTodo.dart';
 import 'package:todoapp/widget/listbuilder.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -89,9 +90,19 @@ class _MainScreenState extends State<MainScreen> {
               )),
             ),
             ListTile(
+              onTap: () {
+                launchUrl(Uri.parse("MossesAryo.github.io"));
+              },
               leading: Icon(Icons.person),
               title: Text('About Me'),
-            )
+            ),
+            ListTile(
+              onTap: () {
+                launchUrl(Uri.parse("https://wa.me/qr/YCOQQAYP7YY2O1 "));
+              },
+              leading: Icon(Icons.mail),
+              title: Text('Contact Me'),
+            ),
           ]),
         ),
         appBar: AppBar(
