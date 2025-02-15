@@ -55,6 +55,23 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
+  void showModalToDo() {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Padding(
+            padding: MediaQuery.of(context).viewInsets,
+            child: Container(
+              padding: EdgeInsets.all(20),
+              height: 200,
+              child: AddTodo(
+                addTodo: addTodo,
+              ),
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,24 +82,7 @@ class _MainScreenState extends State<MainScreen> {
           actions: [
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: InkWell(
-                  onTap: () {
-                    showModalBottomSheet(
-                        context: context,
-                        builder: (context) {
-                          return Padding(
-                            padding: MediaQuery.of(context).viewInsets,
-                            child: Container(
-                              padding: EdgeInsets.all(20),
-                              height: 200,
-                              child: AddTodo(
-                                addTodo: addTodo,
-                              ),
-                            ),
-                          );
-                        });
-                  },
-                  child: Icon(Icons.add)),
+              child: InkWell(onTap: showModalToDo, child: Icon(Icons.add)),
             )
           ],
         ),
