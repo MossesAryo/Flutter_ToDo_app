@@ -1,16 +1,56 @@
-# todoapp
+# 📋 To-Do App
 
-A new Flutter project.
+A simple To-Do App built with Flutter that allows users to add, store, and manage their tasks efficiently. The app uses `SharedPreferences` for local storage and provides a smooth user experience with a clean UI.
 
-## Getting Started
+## ✨ Features
+- ✅ Add and remove to-do items
+- 💾 Save to-dos using `SharedPreferences` (persists even after closing the app)
+- 📌 User-friendly UI with a bottom sheet to add new tasks
+- 🏠 Side drawer with "About Me" and "Contact Me" links
+- 🚀 Lightweight and fast performance
 
-This project is a starting point for a Flutter application.
+## 📸 Screenshots
+*(Add screenshots here if available)*
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Installation
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/yourusername/todo-app.git
+   ```
+2. Navigate to the project folder:
+   ```sh
+   cd todo-app
+   ```
+3. Install dependencies:
+   ```sh
+   flutter pub get
+   ```
+4. Run the app:
+   ```sh
+   flutter run
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 📦 Dependencies
+This project uses the following dependencies:
+- `flutter` (UI framework)
+- `shared_preferences` (for local storage)
+- `url_launcher` (to open links)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🏗️ Project Structure
+```
+/lib
+│-- main.dart (entry point)
+│-- screens/
+│   │-- main_screen.dart (Main To-Do screen)
+│-- widgets/
+│   │-- listbuilder.dart (Widget to display tasks)
+│-- addTodo.dart (Modal for adding tasks)
+```
+
+## 🔗 Links
+- **GitHub Repository**: [Your Repo Link]
+- **Developer Portfolio**: [MossesAryo.github.io]
+
+## 📝 License
+This project is open-source and available under the [MIT License](LICENSE). Feel free to contribute! 🚀
+
