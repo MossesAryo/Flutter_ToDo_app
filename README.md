@@ -15,11 +15,11 @@ A simple To-Do App built with Flutter that allows users to add, store, and manag
 ## 🛠️ Installation
 1. Clone this repository:
    ```sh
-   git clone https://github.com/yourusername/todo-app.git
+   https://github.com/MossesAryo/Flutter_ToDo_app.git
    ```
 2. Navigate to the project folder:
    ```sh
-   cd todo-app
+   cd Flutter_ToDo_app
    ```
 3. Install dependencies:
    ```sh
@@ -48,8 +48,8 @@ This project uses the following dependencies:
 ```
 
 ## 🔗 Links
-- **GitHub Repository**: [Your Repo Link]
-- **Developer Portfolio**: [MossesAryo.github.io]
+- **GitHub Repository**: [https://github.com/MossesAryo/Flutter_ToDo_app.git]
+
 
 ## 📝 License
 This project is open-source and available under the [MIT License](LICENSE). Feel free to contribute! 🚀
