@@ -14,6 +14,12 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   List<String> todoList = [];
 
+  @override
+  void initState() {
+    super.initState();
+    loadData(); 
+  }
+
   void addTodo({required String todoText}) {
     if (todoList.contains(todoText)) {
       showDialog(
