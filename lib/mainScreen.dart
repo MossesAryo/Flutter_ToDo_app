@@ -76,6 +76,14 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        floatingActionButton: FloatingActionButton(
+            shape: CircleBorder(),
+            backgroundColor: Colors.blueGrey[900],
+            child: Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
+            onPressed: showModalToDo),
         drawer: Drawer(
           child: Column(children: [
             Container(
@@ -108,12 +116,6 @@ class _MainScreenState extends State<MainScreen> {
         appBar: AppBar(
           centerTitle: true,
           title: const Text('Todo App'),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: InkWell(onTap: showModalToDo, child: Icon(Icons.add)),
-            )
-          ],
         ),
         body:
             Listbuilder(todoList: todoList, updateLocalData: updateLocalData));
