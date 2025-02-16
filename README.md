@@ -9,9 +9,6 @@ A simple To-Do App built with Flutter that allows users to add, store, and manag
 - 🏠 Side drawer with "About Me" and "Contact Me" links
 - 🚀 Lightweight and fast performance
 
-## 📸 Screenshots
-*(Add screenshots here if available)*
-
 ## 🛠️ Installation
 1. Clone this repository:
    ```sh
